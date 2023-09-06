@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CalculatorAppConneely</string>
+    <string name="UI_Output_name">CalculatorUserInterfaceOutput</string>
+    <string name="function_name">F1_F2_F3_F4_F5</string>
+</resources>
