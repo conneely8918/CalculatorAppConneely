@@ -131,7 +131,7 @@
                 android:text="." />
 
             <Button
-                android:id="@+id/buttonFor(-)"
+                android:id="@+id/buttonForNegative"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
                 android:text="(-)" />
