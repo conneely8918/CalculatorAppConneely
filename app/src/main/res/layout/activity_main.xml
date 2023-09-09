@@ -150,30 +150,35 @@
 
         <Button
             android:id="@+id/buttonForExponent"
+            style="@style/RectButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="^" />
 
         <Button
             android:id="@+id/buttonForAddition"
+            style="@style/RectButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="+" />
 
         <Button
             android:id="@+id/buttonForSubtraction"
+            style="@style/RectButtons"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:text="-" />
 
         <Button
             android:id="@+id/buttonForMultiplication"
+            style="@style/RectButtons"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:text="x" />
 
         <Button
             android:id="@+id/buttonForDivision"
+            style="@style/RectButtons"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:text="/" />
@@ -186,6 +191,67 @@
         android:text="@string/app_name"
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="696dp" />
+
+    <TableLayout
+        android:layout_width="72dp"
+        android:layout_height="94dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="164dp"
+        android:layout_marginEnd="20dp"> <!--@dimens/margins didn't work-->
+
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/upArrowButton"
+                style="@style/ArrowButtons"
+                app:srcCompat="@drawable/up_arrow" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/leftArrowButton"
+                style="@style/ArrowButtons"
+                app:srcCompat="@drawable/left_arrow" />
+
+            <ImageButton
+                android:id="@+id/rightArrowButton"
+                style="@style/ArrowButtons"
+                app:srcCompat="@drawable/right_arrow" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/downArrowButton"
+                style="@style/ArrowButtons"
+                app:srcCompat="@drawable/down_arrow" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/buttonForExponent2"
+        style="@style/RectButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="^"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="104dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

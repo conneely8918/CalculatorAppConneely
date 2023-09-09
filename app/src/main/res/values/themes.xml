@@ -1,4 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="RectButtons" parent="Widget.AppCompat.Button">
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_sides</item>
+        <item name="android:layout_marginEnd">@dimen/margin_sides</item>
+        <item name="backgroundTint">@color/md_theme_light_primary</item>
+    </style>
+
+    <!--https://google-developer-training.github.io/android-developer-fundamentals-course-concepts
+    -v2/unit-2-user-experience/lesson-4-user-interaction/4-1-c-buttons-and-clickable-images/4-1-c-
+    buttons-and-clickable-images.html
+    android => app => res => drawable => new image asset -->
+    <style name="ArrowButtons" parent="RectButtons">
+        <item name="android:layout_width">@dimen/arrow_length</item>
+        <item name="android:layout_height">@dimen/arrow_length</item>
+        <item name="android:layout_marginStart">@dimen/margin_sides</item>
+        <item name="android:layout_marginEnd">@dimen/margin_sides</item>
+        <item name="backgroundTint">@color/md_theme_light_primary</item>
+    </style>
     <!-- Base application theme. -->
     <style name="Base.Theme.CalculatorAppConneely" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
