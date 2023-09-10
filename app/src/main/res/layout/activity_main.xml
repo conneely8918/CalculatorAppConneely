@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_theme_light_outlineVariant"
-    tools:context=".MainActivity"
+    tools:context=".Calculator"
     tools:ignore="HardcodedText"> <!--TODO: stop ignoring that-->
     <!-- the black box at the top-->
     <View

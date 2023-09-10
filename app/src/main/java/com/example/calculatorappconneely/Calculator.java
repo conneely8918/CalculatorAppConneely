@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Scanner;
+
+public class Calculator extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private int numInput;
     private int shownInput;
+    private boolean operationSelected = false;
+    private int num1,num2;
     public static void main (String[]args){
 
     }
@@ -57,19 +61,61 @@ public class MainActivity extends AppCompatActivity {
         } else{
             Log.i("User","Selected A_Button_Without_Functionality");
         }
-        shownInput *= 10;
-        shownInput += numInput;
-        Log.i("User", "Input "+shownInput);
 
-        String UI_Input = String.valueOf(shownInput);
 
+        if(!operationSelected){//the user hasn't hit an operator button
+            if(String.valueOf(num1).length() >= 1) {
+                num1 *= 10;
+                num1 += numInput;
+            }
+        } else {
+            num2 *= 10;
+            num2 += numInput;
+        }
+        displayText(v);
+
+    }
+    String operation;
+    public void operationSelected(View v){
+        if(v.getId() == R.id.buttonForAddition){
+            operation = "+";
+        }
+    }
+
+    public void displayText(View v){
+        // inputTextView > inputString > inputInteger > math > output integer > outputString > outputTextView
+        String UI_Input = String.valueOf(num1);
+        UI_Input += operation;
+        UI_Input += String.valueOf(num2);
+        Log.i("UI", "Input should be "+UI_Input);
+
+        // make a reference to the TextView by locating it with its id
+        TextView UI_InputTV = findViewById(R.id.UIInputTextView);
+        UI_InputTV.setText(UI_Input);
+
+
+        //SOURCE: Stackoverflow answer for how to set a textView which happens to use an editText
         //editText.setText("Hello world!");TODO:Set the TextView to the Output (& get output from input)
         //editText.setText(R.string.hello_world);
-        TextView UI_TV = findViewById(R.id.UIInputTextView);
-        // inputTextView > inputString > inputInteger > math > output integer > outputString > outputTextView
+
+        //TODO:Make output functional; this commented-out-code is a patch
+        /*
         // make a reference to the TextView by locating it with its id
         TextView UI_OutputTV = findViewById(R.id.UIOutputTextView);
         String UI_Output = UI_OutputTV.getText().toString(); //xml:UIOutput_TextView, java: UI_OutputTV, str: UI_output
         int output = Integer.parseInt(UI_Output);
+        */
     }
+    /** Tests the factorials function.
+     * All credit to the factorials assignment from APCSA last year. This code is copied from that.
+     */
+    /*
+    public static void FactorialsTester() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Input a non-negative integer: ");
+        int num = scan.nextInt();
+        int product = num;
+        System.out.print("Factorial of " + num + ": " + factorial(num));
+    }
+    */
 }
