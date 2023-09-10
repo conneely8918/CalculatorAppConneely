@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -63,8 +62,11 @@ public class MainActivity extends AppCompatActivity {
         Log.i("User", "Input "+shownInput);
 
         String UI_Input = String.valueOf(shownInput);
-        
 
+        //editText.setText("Hello world!");TODO:Set the TextView to the Output (& get output from input)
+        //editText.setText(R.string.hello_world);
+        TextView UI_TV = findViewById(R.id.UIInputTextView);
+        // inputTextView > inputString > inputInteger > math > output integer > outputString > outputTextView
         // make a reference to the TextView by locating it with its id
         TextView UI_OutputTV = findViewById(R.id.UIOutputTextView);
         String UI_Output = UI_OutputTV.getText().toString(); //xml:UIOutput_TextView, java: UI_OutputTV, str: UI_output

@@ -2,6 +2,7 @@
     <string name="app_name">CalculatorAppConneely</string>
     <string name="UI_Output_name">CalculatorUserInterfaceOutput</string>
     <string name="UI_Output"></string>
+    <string name="UI_Input_placeholder">Input</string>
     <string name="UI_Output_placeholder">Output</string>
     <string name="function_name">F1,F2,F3,F4,F5</string>
 </resources>
