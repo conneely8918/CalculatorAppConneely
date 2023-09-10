@@ -14,10 +14,10 @@
         android:background="#000000" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/UIOutputTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/UI_Output_placeholder"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="7dp" />
 
@@ -51,19 +51,22 @@
                 android:id="@+id/buttonFor1"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:text="1" />
+                android:text="1"
+                android:onClick="numSelected"/>
 
             <Button
                 android:id="@+id/buttonFor2"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="2" />
+                android:text="2"
+                android:onClick="numSelected" />
 
             <Button
                 android:id="@+id/buttonFor3"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="3" />
+                android:text="3"
+                android:onClick="numSelected" />
         </TableRow>
 
         <TableRow
@@ -75,19 +78,22 @@
                 android:id="@+id/buttonFor4"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="4" />
+                android:text="4"
+                android:onClick="numSelected" />
 
             <Button
                 android:id="@+id/buttonFor5"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="5" />
+                android:text="5"
+                android:onClick="numSelected" />
 
             <Button
                 android:id="@+id/buttonFor6"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="6" />
+                android:text="6"
+                android:onClick="numSelected" />
         </TableRow>
 
         <TableRow
@@ -95,22 +101,25 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/buttonFor9"
+                android:id="@+id/buttonFor7"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="9" />
+                android:text="7"
+                android:onClick="numSelected" />
 
             <Button
                 android:id="@+id/buttonFor8"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="8" />
+                android:text="8"
+                android:onClick="numSelected" />
 
             <Button
-                android:id="@+id/buttonFor7"
+                android:id="@+id/buttonFor9"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="7" />
+                android:text="9"
+                android:onClick="numSelected" />
 
         </TableRow>
 
@@ -122,13 +131,15 @@
                 android:id="@+id/buttonFor0"
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="0" />
+                android:text="0"
+                android:onClick="numSelected" />
 
             <Button
                 android:id="@+id/buttonFor."
                 android:layout_width="55dp"
                 android:layout_height="48dp"
-                android:text="." />
+                android:text="."
+                android:onClick="numSelected" />
 
             <Button
                 android:id="@+id/buttonForNegative"
@@ -195,10 +206,10 @@
     <TableLayout
         android:layout_width="72dp"
         android:layout_height="94dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="164dp"
-        android:layout_marginEnd="20dp"> <!--@dimens/margins didn't work-->
-
+        app:layout_constraintTop_toTopOf="parent"> <!--@dimens/margins didn't work-->
 
 
         <TableRow
@@ -244,14 +255,39 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/buttonForExponent2"
-        style="@style/RectButtons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="^"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="104dp" />
+    <LinearLayout
+        android:layout_width="314dp"
+        android:layout_height="49dp"
+        android:background="@color/md_theme_light_primaryContainer"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="154dp">
+
+        <Button
+            android:id="@+id/function1Button"
+            style="@style/RectButtons"
+            android:text="F1" />
+
+        <Button
+            android:id="@+id/function2Button"
+            style="@style/RectButtons"
+            android:text="F2" />
+
+        <Button
+            android:id="@+id/function3Button2"
+            style="@style/RectButtons"
+            android:text="F3" />
+
+        <Button
+            android:id="@+id/function4Button"
+            style="@style/RectButtons"
+            android:text="F4" />
+
+        <Button
+            android:id="@+id/function4Button2"
+            style="@style/RectButtons"
+            android:text="F5" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

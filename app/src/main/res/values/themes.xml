@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="RectButtons" parent="Widget.AppCompat.Button">
         <item name="android:padding">@dimen/padding</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">@dimen/button_length</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/margin_sides</item>
         <item name="android:layout_marginEnd">@dimen/margin_sides</item>
@@ -15,6 +15,15 @@
     <style name="ArrowButtons" parent="RectButtons">
         <item name="android:layout_width">@dimen/arrow_length</item>
         <item name="android:layout_height">@dimen/arrow_length</item>
+        <item name="android:layout_marginStart">@dimen/margin_sides</item>
+        <item name="android:layout_marginEnd">@dimen/margin_sides</item>
+        <item name="backgroundTint">@color/md_theme_light_primary</item>
+    </style>
+
+    <style name="TextView" parent="Widget.AppCompat.Button">
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:layout_width">@dimen/button_length</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/margin_sides</item>
         <item name="android:layout_marginEnd">@dimen/margin_sides</item>
         <item name="backgroundTint">@color/md_theme_light_primary</item>

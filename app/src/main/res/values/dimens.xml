@@ -4,4 +4,5 @@
     <dimen name="margin_sides">3dp</dimen>
     <dimen name="arrow_length">32dp</dimen>
     <dimen name="margins">20dp</dimen>
+    <dimen name="button_length">48dp</dimen>
 </resources>
