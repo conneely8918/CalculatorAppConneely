@@ -63,29 +63,51 @@ public class Calculator extends AppCompatActivity {
         }
 
 
-        if(!operationSelected){//the user hasn't hit an operator button
+        if(operationSelected) { //the user has hit an operator button
+            if(String.valueOf(num2).length() >= 1) {
+                num2 *= 10;
+                num2 += numInput;
+            }
+            else{
+                num2 += numInput;
+            }
+        } else {
             if(String.valueOf(num1).length() >= 1) {
                 num1 *= 10;
                 num1 += numInput;
             }
-        } else {
-            num2 *= 10;
-            num2 += numInput;
+            else{
+                num1 += numInput;
+            }
         }
-        displayText(v);
-
+        displayText(v); //Display the additional user input
     }
     String operation;
     public void operationSelected(View v){
-        if(v.getId() == R.id.buttonForAddition){
+        if (v.getId() == R.id.buttonForExponent){
+            operation = "^";
+        }
+        else if(v.getId() == R.id.buttonForAddition){
             operation = "+";
         }
+        else if (v.getId() == R.id.buttonForSubtraction){
+            operation = "-";
+        }
+        else if (v.getId() == R.id.buttonForMultiplication){
+            operation = "*";
+        }
+        else if (v.getId() == R.id.buttonForDivision){
+            operation = "/";
+        }
+        operationSelected = true;
     }
 
     public void displayText(View v){
         // inputTextView > inputString > inputInteger > math > output integer > outputString > outputTextView
         String UI_Input = String.valueOf(num1);
-        UI_Input += operation;
+        if (operationSelected){
+            UI_Input += operation;
+        }
         UI_Input += String.valueOf(num2);
         Log.i("UI", "Input should be "+UI_Input);
 
