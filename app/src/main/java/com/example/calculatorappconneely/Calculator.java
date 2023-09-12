@@ -7,8 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.Scanner;
-
 public class Calculator extends AppCompatActivity {
 
     @Override
@@ -83,7 +81,7 @@ public class Calculator extends AppCompatActivity {
         displayText(v); //Display the additional user input
     }
     String operation;
-    public void operationSelected(View v){
+    public void operatorSelected(View v){
         if (v.getId() == R.id.buttonForExponent){
             operation = "^";
         }
@@ -127,6 +125,30 @@ public class Calculator extends AppCompatActivity {
         String UI_Output = UI_OutputTV.getText().toString(); //xml:UIOutput_TextView, java: UI_OutputTV, str: UI_output
         int output = Integer.parseInt(UI_Output);
         */
+    }
+    public void functionSelected(View v){
+        if (v.getId() == R.id.equalsButton){
+            TextView UI_InputTV = findViewById(R.id.UIInputTextView);
+            for(int i = 0; i < UI_InputTV.length(); i++) {
+                // parse input as num
+                // while there isn't an operator, merge section as num
+                while(UI_InputTV.valueOf(i)!= "+, -, ^, *, /"){
+
+                }
+            }
+            calculate();//send the values
+        }
+        else if (v.getId() == R.id.function2Button){
+
+        }
+
+    }
+    public void calculate(){
+        //sort operator by type
+        // if is exponent, find the exponent
+        //if is subtraction, subtract
+        //etc.
+        //return result
     }
     /** Tests the factorials function.
      * All credit to the factorials assignment from APCSA last year. This code is copied from that.
