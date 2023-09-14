@@ -20,7 +20,7 @@
         tools:layout_editor_absoluteX="20dp">
 
         <Button
-            android:id="@+id/buttonForAddition2"
+            android:id="@+id/minimalistButtonForAddition"
             style="@style/RectButtons"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -366,16 +366,16 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         tools:layout_editor_absoluteX="20dp">
 
-        <TextView
-            android:id="@+id/minimalistFirstInputTextView"
+        <EditText
+            android:id="@+id/minimalistFirstInputEditText"
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:text="First Number" />
 
-        <TextView
-            android:id="@+id/minimalistSecondInputTextView"
+        <EditText
+            android:id="@+id/minimalistSecondInputEditText"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="5dp"

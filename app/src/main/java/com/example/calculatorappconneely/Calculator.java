@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -282,16 +283,67 @@ public class Calculator extends AppCompatActivity {
         System.out.print("Factorial of " + num + ": " + factorial(num));
     }
     */
-    public void add(){
-        
-    }
-    public void subtract(){
+    public void add(View v){
+        EditText minimalistFirstInputET = findViewById(R.id.minimalistFirstInputEditText);
+        String minimalistFirstInput = minimalistFirstInputET.getText().toString();
+        int minimalistFirstInputValue = Integer.parseInt(minimalistFirstInput);
 
-    }
-    public void multiply(){
+        EditText minimalistSecondInputET = findViewById(R.id.minimalistSecondInputEditText);
+        String minimalistSecondInput = minimalistSecondInputET.getText().toString();
+        int minimalistSecondInputValue = Integer.parseInt(minimalistSecondInput);
 
-    }
-    public void divide(){
+        double minimalistOutputValue = (double) minimalistFirstInputValue
+                + minimalistSecondInputValue;
+        String minimalistOutput = "" + minimalistOutputValue;
 
+        TextView minimalistOutputTV = findViewById(R.id.minimalistOutputTextView);
+        minimalistOutputTV.setText(minimalistOutput);
+    }
+    public void subtract(View v){
+        EditText minimalistFirstInputET = findViewById(R.id.minimalistFirstInputEditText);
+        String minimalistFirstInput = minimalistFirstInputET.getText().toString();
+        int minimalistFirstInputValue = Integer.parseInt(minimalistFirstInput);
+
+        EditText minimalistSecondInputET = findViewById(R.id.minimalistSecondInputEditText);
+        String minimalistSecondInput = minimalistSecondInputET.getText().toString();
+        int minimalistSecondInputValue = Integer.parseInt(minimalistSecondInput);
+
+        double minimalistOutputValue = ((double) minimalistFirstInputValue
+                - minimalistSecondInputValue);
+        String minimalistOutput = "" + minimalistOutputValue;
+
+        TextView minimalistOutputTV = findViewById(R.id.minimalistOutputTextView);
+        minimalistOutputTV.setText(minimalistOutput);
+    }
+    public void multiply(View v){
+        EditText minimalistFirstInputET = findViewById(R.id.minimalistFirstInputEditText);
+        String minimalistFirstInput = minimalistFirstInputET.getText().toString();
+        int minimalistFirstInputValue = Integer.parseInt(minimalistFirstInput);
+
+        EditText minimalistSecondInputET = findViewById(R.id.minimalistSecondInputEditText);
+        String minimalistSecondInput = minimalistSecondInputET.getText().toString();
+        int minimalistSecondInputValue = Integer.parseInt(minimalistSecondInput);
+
+        int minimalistOutputValue = (int) (minimalistFirstInputValue * minimalistSecondInputValue);
+        String minimalistOutput = "" + minimalistOutputValue;
+
+        TextView minimalistOutputTV = findViewById(R.id.minimalistOutputTextView);
+        minimalistOutputTV.setText(minimalistOutput);
+    }
+    public void divide(View v){
+        EditText minimalistFirstInputET = findViewById(R.id.minimalistFirstInputEditText);
+        String minimalistFirstInput = minimalistFirstInputET.getText().toString();
+        int minimalistFirstInputValue = Integer.parseInt(minimalistFirstInput);
+
+        EditText minimalistSecondInputET = findViewById(R.id.minimalistSecondInputEditText);
+        String minimalistSecondInput = minimalistSecondInputET.getText().toString();
+        int minimalistSecondInputValue = Integer.parseInt(minimalistSecondInput);
+
+        double minimalistOutputValue = ((double) minimalistFirstInputValue
+                / minimalistSecondInputValue);
+        String minimalistOutput = "" + minimalistOutputValue;
+
+        TextView minimalistOutputTV = findViewById(R.id.minimalistOutputTextView);
+        minimalistOutputTV.setText(minimalistOutput);
     }
 }
