@@ -8,6 +8,54 @@
     tools:context=".Calculator"
     tools:ignore="HardcodedText"> <!--TODO: stop ignoring that-->
     <!-- the black box at the top-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="270dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="68dp"
+        android:background="@color/md_theme_light_tertiaryContainer"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="20dp">
+
+        <Button
+            android:id="@+id/buttonForAddition2"
+            style="@style/RectButtons"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="add"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/buttonForSubtraction2"
+            style="@style/RectButtons"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="subtract"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/buttonForMultiplication2"
+            style="@style/RectButtons"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="multiply"
+            android:text="x" />
+
+        <Button
+            android:id="@+id/buttonForDivision2"
+            style="@style/RectButtons"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="divide"
+            android:text="/" />
+    </LinearLayout>
+
     <View
         android:id="@+id/view"
         style="@style/Views"
@@ -307,5 +355,54 @@
         </TableRow>
 
     </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/minimalistLinearLayout1"
+        android:layout_width="270dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/md_theme_light_tertiaryContainer"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="20dp">
+
+        <TextView
+            android:id="@+id/minimalistFirstInputTextView"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="First Number" />
+
+        <TextView
+            android:id="@+id/minimalistSecondInputTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Second Number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/minimalistOutputLinearLayout"
+        android:layout_width="270dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@color/md_theme_light_tertiaryContainer"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+
+        <TextView
+            android:id="@+id/minimalistOutputTextView"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="Returns" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

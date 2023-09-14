@@ -282,4 +282,16 @@ public class Calculator extends AppCompatActivity {
         System.out.print("Factorial of " + num + ": " + factorial(num));
     }
     */
+    public void add(){
+        
+    }
+    public void subtract(){
+
+    }
+    public void multiply(){
+
+    }
+    public void divide(){
+
+    }
 }
