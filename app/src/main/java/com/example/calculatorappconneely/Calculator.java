@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Calculator extends AppCompatActivity {
 
     @Override
@@ -17,6 +20,9 @@ public class Calculator extends AppCompatActivity {
     private int numInput;
     private int shownInput;
     private boolean operationSelected = false;
+    String[] operatorsArray = {"^","+","-","*","/"};
+    ArrayList<String> equationArrayList = new ArrayList<String>();
+    private String resultString;
     private int num1,num2;
     public static void main (String[]args){
 
@@ -29,33 +35,43 @@ public class Calculator extends AppCompatActivity {
         if(v.getId() == R.id.buttonFor1) {
             Log.i("User", "Selected 1");
             numInput = 1;
+            equationArrayList.add("1");
         } else if(v.getId() == R.id.buttonFor2) {
             Log.i("User", "Selected 2");
             numInput = 2;
+            equationArrayList.add("2");
         } else if(v.getId() == R.id.buttonFor3) {
             Log.i("User", "Selected 3");
             numInput = 3;
+            equationArrayList.add("3");
         } else if(v.getId() == R.id.buttonFor4) {
             Log.i("User", "Selected 4");
             numInput = 4;
+            equationArrayList.add("4");
         } else if(v.getId() == R.id.buttonFor5) {
             Log.i("User", "Selected 5");
             numInput = 5;
+            equationArrayList.add("5");
         }else if(v.getId() == R.id.buttonFor6) {
             Log.i("User", "Selected 6");
             numInput = 6;
+            equationArrayList.add("6");
         } else if(v.getId() == R.id.buttonFor7) {
             Log.i("User", "Selected 7");
             numInput = 7;
+            equationArrayList.add("7");
         }else if(v.getId() == R.id.buttonFor8) {
             Log.i("User", "Selected 8");
             numInput = 8;
+            equationArrayList.add("8");
         } else if(v.getId() == R.id.buttonFor9) {
             Log.i("User", "Selected 9");
             numInput = 9;
+            equationArrayList.add("9");
         } else if(v.getId() == R.id.buttonFor0) {
             Log.i("User", "Selected 0");
             numInput = 0;
+            equationArrayList.add("0");
         } else{
             Log.i("User","Selected A_Button_Without_Functionality");
         }
@@ -102,12 +118,12 @@ public class Calculator extends AppCompatActivity {
 
     public void displayText(View v){
         // inputTextView > inputString > inputInteger > math > output integer > outputString > outputTextView
+
         String UI_Input = String.valueOf(num1);
         if (operationSelected){
             UI_Input += operation;
         }
         UI_Input += String.valueOf(num2);
-        Log.i("UI", "Input should be "+UI_Input);
 
         // make a reference to the TextView by locating it with its id
         TextView UI_InputTV = findViewById(R.id.UIInputTextView);
@@ -150,17 +166,94 @@ public class Calculator extends AppCompatActivity {
 
                 //}
             //}
+
+            for (int h = 0; h < equationArrayList.size(); h++) {//String s:equationArrayList) {
+                // check if the index is an operator
+                //boolean operator = false;
+                //for (int i = 0; i < 6; i++){
+                //    if (operatorsArray[i].equals(equationArrayList.get(h))) {
+                //        operator = true;
+                //        break;
+                //    }
+                //}
+                if (operatorCheck(equationArrayList.get(h))){
+                    //take the numbers before s
+                    String outputNumBeforeOperator = "";
+                    if (h==0){
+                        Log.i("User","pressed an operator first.");
+                    } else {
+                        int m = h-1;
+                        while (m > 0 && !operatorCheck(equationArrayList.get(m))) {
+                            String newONBO = equationArrayList.get(m);
+                            newONBO += outputNumBeforeOperator;
+                            outputNumBeforeOperator = newONBO;
+                            Log.i("User","got to ONBO");
+                            m--;
+                        }
+
+                    /*//TODO in part 5
+
+                    //take all the *numbers* before s
+                    //
+                    for (String s2:equationArrayList) {
+                        boolean number = true;
+                        for (int i = 0; i < 6; i++){
+                            if (operatorsArray[i].equals(s2)) {
+                                number = false;
+                            }
+                        }
+                        if (number){
+
+                        }
+                    }
+                    //then take all the *numbers* after s
+                    //
+                    //then call the calculate method
+                    // w/numbers and operator
+
+                    */
+                    }
+                }
+            }
             String tempInputString = UI_InputTV.getText().toString();
             displayResult(v,tempInputString); //TODO this is temporary. calculate first.
-            calculate();//send the values
+            Log.i("UI", "output str should be"+tempInputString);
+            calculate(tempInputString);//send the values
         }
         else if (v.getId() == R.id.function2Button){
 
         }
 
     }
-    public void calculate(){
+
+    //separate method for checking for operators
+    //because the code does this multiple times
+    private boolean operatorCheck(String s) {
+        boolean operator = false;
+        for (int i = 0; i < 5; i++){
+            if (operatorsArray[i].equals(s)) {
+                operator = true;
+            }
+        }
+        return operator;
+    }
+
+    public void calculate(String input){
+        Log.i("User", "calculated something");
         //sort operator by type
+        for (int i = 0; i < input.length(); i++) {
+            if (input.substring(i,i+1).equals("+")){//addition
+                resultString = "4";
+                /*for(int j = 0; j < i; j++){
+                    for (String s: operatorsArray){
+                        if(s.equals(j)){
+
+                        }
+                    }
+                    if((input.substring(j,j+1).contains(operatorsArray[]))
+                }*/
+            }
+        }
         // if is exponent, find the exponent
         //if is subtraction, subtract
         //etc.
@@ -175,6 +268,7 @@ public class Calculator extends AppCompatActivity {
         String UI_Output = result; //String.valueOf()
         TextView UIOutputTV = findViewById(R.id.UIOutputTextView);
         UIOutputTV.setText(UI_Output);
+        Log.i("UI", "Output should be"+UI_Output);
     }
     /** Tests the factorials function.
      * All credit to the factorials assignment from APCSA last year. This code is copied from that.

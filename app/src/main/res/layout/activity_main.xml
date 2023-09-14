@@ -53,6 +53,7 @@
 
         <Button
             android:id="@+id/equalsButton"
+            android:onClick="functionSelected"
             style="@style/RectButtons"
             android:text="=" />
 
