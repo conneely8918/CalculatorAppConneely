@@ -126,16 +126,32 @@ public class Calculator extends AppCompatActivity {
         int output = Integer.parseInt(UI_Output);
         */
     }
+    // to - do list for code:
+    // 1.) get something to show up on the output screen if the user hits enter. SOMETHING.
+    // 2.) if the user hits 1 then + then 3 then =, the output shows 4
+    // 3.) single-operation subtraction, multiplication, division work
+    // 4.) error-resistant
+    // 5.) multiple-operation
+    // 6.) exponent and factorial
+    // 7.) compatible with most mobile screen sizes (2.5 by 4 inches up to 6 by 10 inches)
+    // 8.) stats screen & median functionality
     public void functionSelected(View v){
+        /*Logic for output-showing code: read the input as a string, (2) send it to output.
+         *(2): if (3) + is found, add the numbers before and after the + sign
+         * (3): search for operator characters and return a string solely of those operators (4).
+         * (4): if two operators are next to each other or "..", show an error message on UI.
+         */
         if (v.getId() == R.id.equalsButton){
             TextView UI_InputTV = findViewById(R.id.UIInputTextView);
-            for(int i = 0; i < UI_InputTV.length(); i++) {
+            //for(int i = 0; i < UI_InputTV.length(); i++) {TODO: un-patch this.
                 // parse input as num
                 // while there isn't an operator, merge section as num
-                while(UI_InputTV.valueOf(i)!= "+, -, ^, *, /"){
+                //while(UI_InputTV.valueOf(i)!= "+, -, ^, *, /"){TODO: un-patch this.
 
-                }
-            }
+                //}
+            //}
+            String tempInputString = UI_InputTV.getText().toString();
+            displayResult(v,tempInputString); //TODO this is temporary. calculate first.
             calculate();//send the values
         }
         else if (v.getId() == R.id.function2Button){
@@ -149,6 +165,16 @@ public class Calculator extends AppCompatActivity {
         //if is subtraction, subtract
         //etc.
         //return result
+    }
+
+    /**Function displayResult() displays the modified input given by the calculate method.
+     * @Param v the screen
+     * Source: Original code, but information about how to write it is from Mobile App class
+     */
+    public void displayResult(View v, String result){
+        String UI_Output = result; //String.valueOf()
+        TextView UIOutputTV = findViewById(R.id.UIOutputTextView);
+        UIOutputTV.setText(UI_Output);
     }
     /** Tests the factorials function.
      * All credit to the factorials assignment from APCSA last year. This code is copied from that.
